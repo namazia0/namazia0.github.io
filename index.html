@@ -7,4 +7,201 @@
   <style>
     body.light-mode {
       margin: 0;
-      font-family: '
+      font-family: 'Inter', sans-serif;
+      background: #fafafa;
+      color: #111;
+    }
+    body.dark-mode {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #343541;
+      color: #e0e0e0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background: inherit;
+      color: inherit;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      font-weight: 500;
+    }
+    main {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    section {
+      margin-bottom: 4rem;
+    }
+    h1, h2 {
+      margin-bottom: 1rem;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: inherit;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      transition: background 0.3s, color 0.3s, border 0.3s;
+    }
+    .divider {
+      width: 80%;
+      margin: 2rem auto;
+      border: none;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.3;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: inherit;
+      color: inherit;
+      margin-top: 4rem;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 0.5s;
+    }
+    .social-links a {
+      margin: 0 10px;
+      display: inline-block;
+      transition: transform 0.3s, filter 0.3s;
+    }
+    .social-links a:hover {
+      transform: scale(1.2);
+      filter: brightness(1.2);
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    .social-icon img {
+      transition: filter 0.3s;
+    }
+    body.light-mode .github img,
+    body.light-mode .linkedin img,
+    body.light-mode .email img {
+      filter: invert(0);
+    }
+    body.dark-mode .github img{
+      filter: invert(1) brightness(3);
+    }
+
+    /* Toggle Switch Styling */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+      margin-left: 1.5rem;
+    }
+    .switch input { display: none; }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 34px;
+    }
+    .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/869/869869.png'); /* Sun by default */
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: .4s;
+    border-radius: 50%;
+  }
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+    input:checked + .slider:before {
+  transform: translateX(26px);
+  background-image: url('https://static.thenounproject.com/png/2712425-200.png'); /* Moon in dark mode */
+}
+  </style>
+</head>
+
+<body class="light-mode">
+
+<header>
+  <div><strong>ARIAN NAMAZI</strong></div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="projects.html">Projects</a>
+
+    <!-- Toggle Switch -->
+    <label class="switch">
+      <input type="checkbox" id="mode-toggle">
+      <span class="slider"></span>
+    </label>
+
+  </nav>
+</header>
+
+<main>
+<section id="home" style="text-align: center; margin-top: 100px;">
+    <h1>Arian Namazi</h1>
+    <p>GenAI Intern @ BOSCH, MSc CS @ University of Bonn. Tech Enthusiast, Builder.</p>
+
+    <div class="social-links" style="margin-top: 30px;">
+      <a href="https://github.com/namazia0" target="_blank" class="social-icon github">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="30" height="30">
+      </a>
+      <a href="https://www.linkedin.com/in/arian-namazi/" target="_blank" class="social-icon linkedin">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="30" height="30">
+      </a>
+      <a href="mailto:arian.namazi7@gmail.com" class="social-icon email">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" width="30" height="30">
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2025 Arian Namazi.
+</footer>
+
+<script>
+  const toggle = document.getElementById('mode-toggle');
+  const body = document.body;
+
+  toggle.addEventListener('change', function() {
+    if (this.checked) {
+      body.classList.add('dark-mode');
+      body.classList.remove('light-mode');
+    } else {
+      body.classList.add('light-mode');
+      body.classList.remove('dark-mode');
+    }
+  });
+</script>
+
+</body>
+</html>
