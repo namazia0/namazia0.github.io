@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mein Portfolio</title>
+  <title>Arian Namazi</title>
   <style>
     body.light-mode {
       margin: 0;
@@ -145,6 +145,23 @@
   transform: translateX(26px);
   background-image: url('https://static.thenounproject.com/png/2712425-200.png'); /* Moon in dark mode */
 }
+  .profile-pic {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .profile-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.5s;
+  }
+  .profile-pic img:hover {
+    filter: grayscale(0%);
+  }
+
   </style>
 </head>
 
@@ -166,10 +183,13 @@
 </header>
 
 <main>
-<section id="home" style="text-align: center; margin-top: 100px;">
+  <section id="home" style="text-align: center; margin-top: 100px;">
+    <div class="profile-pic">
+      <img src="images/profile_image.jpeg" alt="Arian Namazi">
+    </div>
     <h1>Arian Namazi</h1>
     <p>GenAI Intern @ BOSCH, MSc CS @ University of Bonn. Tech Enthusiast, Builder.</p>
-
+  
     <div class="social-links" style="margin-top: 30px;">
       <a href="https://github.com/namazia0" target="_blank" class="social-icon github">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="30" height="30">
@@ -181,7 +201,7 @@
         <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" width="30" height="30">
       </a>
     </div>
-  </section>
+  </section>  
 </main>
 
 <footer>
