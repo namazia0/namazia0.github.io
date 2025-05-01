@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🚀</text></svg>'>
+  <title>Arian Namazi</title>
+  <style>
+  body.light-mode {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #fafafa;
+    color: #111;
+  }
+  body.dark-mode {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #343541;
+    color: #e0e0e0;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: inherit;
+    color: inherit;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  nav a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: #007bff;
+  }
+  main {
+    padding: 3rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  section {
+    margin-bottom: 4rem;
+  }
+  h1, h2 {
+    margin-bottom: 1rem;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  .project-card {
+    background: inherit;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, color 0.3s, border 0.3s;
+  }
+  .divider {
+    width: 80%;
+    margin: 2rem auto;
+    border: none;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.3;
+  }
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background: inherit;
+    color: inherit;
+    margin-top: 4rem;
+  }
+  .social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+    animation-delay: 0.5s;
+  }
+  .social-links a {
+    margin: 0 10px;
+    display: inline-block;
+    transition: transform 0.3s, filter 0.3s;
+  }
+  .social-links a:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+  }
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+  .social-icon img {
+    transition: filter 0.3s;
+  }
+  body.light-mode .github img,
+  body.light-mode .linkedin img,
+  body.light-mode .email img {
+    filter: invert(0);
+  }
+  body.dark-mode .github img{
+    filter: invert(1) brightness(3);
+  }
+
+  /* Toggle Switch Styling */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-left: 1.5rem;
+  }
+  .switch input { display: none; }
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/869/869869.png');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  input:checked + .slider:before {
+    transform: translateX(26px);
+    background-image: url('https://static.thenounproject.com/png/2712425-200.png');
+  }
+  .profile-pic {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .profile-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.5s;
+  }
+  .profile-pic img:hover {
+    filter: grayscale(0%);
+  }
+
+</style>
+
+</head>
+
+<body class="light-mode">
+
+<header>
+  <div><strong>ARIAN NAMAZI</strong></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about/about.html">About</a>
+    <a href="resume/resume.html">Resume</a>
+    <a href="projects/projects.html">Projects</a>
+    <a href="contact/contact.html">Contact</a>
+
+    <label class="switch">
+      <input type="checkbox" id="mode-toggle">
+      <span class="slider"></span>
+    </label>
+
+  </nav>
+</header>
+
+<main>
+  <section style="text-align: center; margin-top: 20px;">
+    <h1>Projects</h1>
+    <div style="text-align: justify; max-width: 700px; margin: 0 auto;">
+      <p>
+        Will be added soon.
+      </p>
+    </div>
+  </section>  
+</main>
+
+
+<footer>
+  © 2025 Arian Namazi.
+</footer>
+
+<script>
+  const body = document.body;
+  const toggle = document.getElementById('mode-toggle');
+
+  // Load saved mode
+  const savedMode = localStorage.getItem('mode');
+  if (savedMode) {
+    body.classList.add(savedMode);
+    body.classList.remove(savedMode === 'dark-mode' ? 'light-mode' : 'dark-mode');
+    if (toggle) toggle.checked = savedMode === 'dark-mode';
+  }
+
+  if (toggle) {
+    toggle.addEventListener('change', function () {
+      const mode = this.checked ? 'dark-mode' : 'light-mode';
+      body.classList.add(mode);
+      body.classList.remove(mode === 'dark-mode' ? 'light-mode' : 'dark-mode');
+      localStorage.setItem('mode', mode);
+    });
+  }
+</script>
+
+</body>
+</html>

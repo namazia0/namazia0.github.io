@@ -3,8 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🚀</text></svg>'>
   <title>Arian Namazi</title>
   <style>
+  
+  .download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .download-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .center-section {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+  
     body.light-mode {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -34,12 +58,27 @@
       text-decoration: none;
       color: inherit;
       font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #007bff;
     }
     main {
       padding: 3rem 2rem;
       max-width: 1000px;
       margin: 0 auto;
     }
+    
+.event-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.event-link:hover {
+  color: #007bff;
+}
+
     section {
       margin-bottom: 4rem;
     }
@@ -73,6 +112,39 @@
       color: inherit;
       margin-top: 4rem;
     }
+    .upcoming-events {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.event {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.event-image img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.event-image:hover img {
+  transform: scale(1.03);
+}
+
+.event-details {
+  flex: 1;
+}
+
+.event-details h3 {
+  margin: 0 0 0.5rem 0;
+}
+
     .social-links {
       display: flex;
       justify-content: center;
@@ -105,7 +177,7 @@
     body.dark-mode .github img{
       filter: invert(1) brightness(3);
     }
-
+  
     /* Toggle Switch Styling */
     .switch {
       position: relative;
@@ -124,44 +196,44 @@
       border-radius: 34px;
     }
     .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/869/869869.png'); /* Sun by default */
-    background-size: 70%;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: .4s;
-    border-radius: 50%;
-  }
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/869/869869.png');
+      background-size: 70%;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: .4s;
+      border-radius: 50%;
+    }
     input:checked + .slider {
       background-color: #2196F3;
     }
     input:checked + .slider:before {
-  transform: translateX(26px);
-  background-image: url('https://static.thenounproject.com/png/2712425-200.png'); /* Moon in dark mode */
-}
-  .profile-pic {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  .profile-pic img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    filter: grayscale(100%);
-    transition: filter 0.5s;
-  }
-  .profile-pic img:hover {
-    filter: grayscale(0%);
-  }
-
+      transform: translateX(26px);
+      background-image: url('https://static.thenounproject.com/png/2712425-200.png');
+    }
+    .profile-pic {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .profile-pic img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: filter 0.5s;
+    }
+    .profile-pic img:hover {
+      filter: grayscale(0%);
+    }
+  
   </style>
 </head>
 
@@ -170,14 +242,12 @@
 <header>
   <div><strong>ARIAN NAMAZI</strong></div>
   <nav>
-    <a href="#home">Home</a>
-    <a href="about.html">About</a>
-    <a href="resume.html">Resume</a>
-    <a href="upcoming.html">Upcoming</a>
-    <a href="contact.html">Contact</a>
-    <!-- <a href="projects.html">Projects</a ->>
-
-    Toggle Switch -->
+    <a href="index.html">Home</a>
+    <a href="about/about.html">About</a>
+    <a href="resume/resume.html">Resume</a>
+    <a href="projects/projects.html">Projects</a>
+    <a href="contact/contact.html">Contact</a>
+    
     <label class="switch">
       <input type="checkbox" id="mode-toggle">
       <span class="slider"></span>
@@ -187,30 +257,55 @@
 </header>
 
 <main>
-  <section id="home" style="text-align: center; margin-top: 100px;">
-    <div class="profile-pic">
-      <img src="images/profile_image.jpeg" alt="profile-pic" style="width: 250px; height: auto;">
+<section class="upcoming-events">
+  <h2>Upcoming Work & Events</h2>
+
+  <div class="event">
+    <a href="https://lu.ma/paris-hackathon?tk=bJzx85" target="_blank" class="event-image">
+      <img src="event-image.jpg" alt="Event Image">
+    </a>
+
+    <div class="event-details">
+    <h3>
+  <a href="https://lu.ma/paris-hackathon?tk=bJzx85" target="_blank" class="event-link">
+    {Tech:Paris} AI Hackathon
+  </a>
+</h3>
+
+  <p><strong>Date:</strong> 24/2025 - 25/2025</p>
+      <p>A full weekend dedicated to pushing the boundaries of what's possible with artificial intelligence.</p>
     </div>
-    <h1 style="font-size: 3rem; font-weight: bold;">Arian Namazi</h1>
-    <p style="font-size: 1.5rem; font-weight: 500;">
-      MSc CS Student @UniversityofBonn<br>
-      Data Analytics and GenAI Intern @BOSCH.<br>
-      Tech Enthusiast. Builder.
-    </p>
+  </div>
   
-    <div class="social-links" style="margin-top: 30px;">
-      <a href="https://github.com/namazia0" target="_blank" class="social-icon github">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="30" height="30">
-      </a>
-      <a href="https://www.linkedin.com/in/arian-namazi/" target="_blank" class="social-icon linkedin">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="30" height="30">
-      </a>
-      <a href="mailto:arian.namazi7@gmail.com" class="social-icon email">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" width="30" height="30">
-      </a>
+  <div class="event">
+    <a href="https://example.com/event-link" target="_blank" class="event-image">
+      <img src="event-image.jpg" alt="Event Image">
+    </a>
+
+    <div class="event-details">
+      <h3>Uni Bonn Teaching Assistant for Data-centric Computer Science</h3>
+      <p><strong>Date:</strong> 10/2025 - 01/2026</p>
+      <p>Teaching ≈ 30 students, collaboration with fellow teaching assistants, grading assignments, grading exam</p>
+    </div>
+  </div>
+ 
+
+  <section class="center-section">
+    <h1>Resume</h1>
+    <div style="text-align: justify; max-width: 700px; margin: 0 auto;">
+      <p>
+          <a href="resume.pdf" download class="download-btn">Download Resume</a>
+
+      </p>
+    </div>
+    <div style="text-align: justify; max-width: 700px; margin: 0 auto;">
+      <p>
+          Last updated: 01.05.2025
+      </p>
     </div>
   </section>  
 </main>
+
 
 <footer>
   © 2025 Arian Namazi.
