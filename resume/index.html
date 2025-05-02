@@ -141,6 +141,11 @@
   flex: 1;
 }
 
+.half-size {
+  width: 50%;
+  height: auto;
+}
+
 .event-details h3 {
   margin: 0 0 0.5rem 0;
 }
@@ -261,7 +266,7 @@
   <h2 style="text-align: center; margin-top: -22px;">Upcoming Events & Work</h2>
 
   <div class="event">
-    <a href="https://lu.ma/paris-hackathon?tk=bJzx85" target="_blank" class="event-image">
+    <a href="https://lu.ma/paris-hackathon?tk=bJzx85" target="_blank" class="event-image" class="half-size">
       <img src="../images/paris_hackathon.png" alt="Event Image">
     </a>
 
@@ -272,14 +277,14 @@
   </a>
 </h3>
 
-  <p><strong>Date:</strong> 24/2025 - 25/2025</p>
+  <p><strong>Date:</strong> 24/05/2025 - 25/05/2025</p>
       <p>In will participate in this full weekend dedicated to pushing the boundaries of what's possible with artificial intelligence.</p>
     </div>
   </div>
   
   <div class="event">
     <a target="_blank" class="event-image">
-      <img src="../images/uni_bonn_logo.png" alt="Event Image">
+      <img src="../images/uni_bonn_logo.png" alt="Event Image" class="half-size">
     </a>
 
     <div class="event-details">
@@ -327,4 +332,10 @@
       const mode = this.checked ? 'dark-mode' : 'light-mode';
       body.classList.add(mode);
       body.classList.remove(mode === 'dark-mode' ? 'light-mode' : 'dark-mode');
-      localStorage.
+      localStorage.setItem('mode', mode);
+    });
+  }
+</script>
+
+</body>
+</html>
