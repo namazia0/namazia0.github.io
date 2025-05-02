@@ -261,4 +261,77 @@
   <h2>Upcoming Work & Events</h2>
 
   <div class="event">
-    <a href="https://lu.ma/paris-hackathon?tk=bJzx85" target="_blank" c
+    <a href="https://lu.ma/paris-hackathon?tk=bJzx85" target="_blank" class="event-image">
+      <img src="event-image.jpg" alt="Event Image">
+    </a>
+
+    <div class="event-details">
+    <h3>
+  <a href="https://lu.ma/paris-hackathon?tk=bJzx85" target="_blank" class="event-link">
+    {Tech:Paris} AI Hackathon
+  </a>
+</h3>
+
+  <p><strong>Date:</strong> 24/2025 - 25/2025</p>
+      <p>A full weekend dedicated to pushing the boundaries of what's possible with artificial intelligence.</p>
+    </div>
+  </div>
+  
+  <div class="event">
+    <a href="https://example.com/event-link" target="_blank" class="event-image">
+      <img src="event-image.jpg" alt="Event Image">
+    </a>
+
+    <div class="event-details">
+      <h3>Uni Bonn Teaching Assistant for Data-centric Computer Science</h3>
+      <p><strong>Date:</strong> 10/2025 - 01/2026</p>
+      <p>Teaching ≈ 30 students, collaboration with fellow teaching assistants, grading assignments, grading exam</p>
+    </div>
+  </div>
+ 
+
+  <section class="center-section">
+    <h1>Resume</h1>
+    <div style="text-align: justify; max-width: 700px; margin: 0 auto;">
+      <p>
+          <a href="Arian_Namazi_resume.pdf" download class="download-btn">Download Resume</a>
+
+      </p>
+    </div>
+    <div style="text-align: justify; max-width: 700px; margin: 0 auto;">
+      <p>
+          Last updated: 01.05.2025
+      </p>
+    </div>
+  </section>  
+</main>
+
+
+<footer>
+  © 2025 Arian Namazi.
+</footer>
+
+<script>
+  const body = document.body;
+  const toggle = document.getElementById('mode-toggle');
+
+  // Load saved mode
+  const savedMode = localStorage.getItem('mode');
+  if (savedMode) {
+    body.classList.add(savedMode);
+    body.classList.remove(savedMode === 'dark-mode' ? 'light-mode' : 'dark-mode');
+    if (toggle) toggle.checked = savedMode === 'dark-mode';
+  }
+
+  if (toggle) {
+    toggle.addEventListener('change', function () {
+      const mode = this.checked ? 'dark-mode' : 'light-mode';
+      body.classList.add(mode);
+      body.classList.remove(mode === 'dark-mode' ? 'light-mode' : 'dark-mode');
+      localStorage.setItem('mode', mode);
+    });
+  }
+</script>
+
+</body>
+</html>
