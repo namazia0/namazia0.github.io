@@ -9,9 +9,21 @@
     body.light-mode {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #fafafa;
-      color: #111;
     }
+    
+    .email-link {
+  text-decoration: none;
+  color: #007bff;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  background: inherit;
+      color: inherit;
+}
+
+.email-link:hover {
+  color: #007bff;
+  transform: scale(1.05); /* slight zoom */
+}
     body.dark-mode {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -189,15 +201,35 @@
   </nav>
 </header>
 
+
 <main>
-  <section style="text-align: center; margin-top: 20px;">
-    <h1>Projects</h1>
-    <div style="text-align: justify; max-width: 700px; margin: 0 auto;">
-      <p>
-        Will be added soon.
-      </p>
-    </div>
-  </section>  
+  <section>
+    <h1 style="text-align: center;">Contact</h1>
+    
+    <h2>Email</h2>
+
+    <ul>
+      <li>
+        <p>
+          <a href="mailto:arian.namazi7@gmail.com" class="email-link">arian.namazi7@gmail.com</a> (primary)
+        </p>
+      </li>
+      <li>
+        <p>
+          <a href="mailto:s6arnama@uni-bonn.de" class="email-link">s6arnama@uni-bonn.de</a>
+        </p>
+      </li>
+    </ul>
+
+    <h2>Socials</h2>
+    <ul>
+      <li>
+        <p>
+          <a href="https://www.linkedin.com/in/arian-namazi/" class="email-link" target="_blank">LinkedIn</a>
+        </p>
+      </li>
+    </ul>
+  </section>
 </main>
 
 
