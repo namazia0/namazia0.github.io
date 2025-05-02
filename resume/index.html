@@ -331,4 +331,11 @@
     toggle.addEventListener('change', function () {
       const mode = this.checked ? 'dark-mode' : 'light-mode';
       body.classList.add(mode);
-      body.
+      body.classList.remove(mode === 'dark-mode' ? 'light-mode' : 'dark-mode');
+      localStorage.setItem('mode', mode);
+    });
+  }
+</script>
+
+</body>
+</html>
