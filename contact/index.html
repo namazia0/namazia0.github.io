@@ -240,3 +240,24 @@
 <script>
   const body = document.body;
   const toggle = document.getElementById('mode-toggle');
+
+  // Load saved mode
+  const savedMode = localStorage.getItem('mode');
+  if (savedMode) {
+    body.classList.add(savedMode);
+    body.classList.remove(savedMode === 'dark-mode' ? 'light-mode' : 'dark-mode');
+    if (toggle) toggle.checked = savedMode === 'dark-mode';
+  }
+
+  if (toggle) {
+    toggle.addEventListener('change', function () {
+      const mode = this.checked ? 'dark-mode' : 'light-mode';
+      body.classList.add(mode);
+      body.classList.remove(mode === 'dark-mode' ? 'light-mode' : 'dark-mode');
+      localStorage.setItem('mode', mode);
+    });
+  }
+</script>
+
+</body>
+</html>
